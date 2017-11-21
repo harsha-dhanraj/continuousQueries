@@ -1,0 +1,1 @@
+CREATE CONTINUOUS QUERY mean_usage_user ON telegraf RESAMPLE EVERY 30m BEGIN SELECT mean(usage_user) INTO telegraf.autogen.cpu FROM telegraf.autogen.cpu GROUP BY time(10m) END
